@@ -18,6 +18,10 @@ const Counter = () => {
       </p>
       <button onClick={incriment}>Add</button>
       <button onClick={decriment}>Sub</button>
+
+       <h1 className='text-3xl font-bold underline text-center mt-5 bg-blue-500 text-white'>
+      Hello world!
+    </h1>
     </>
   )
 }
