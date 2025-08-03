@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Listing</h1>
+    <ul >
+         <a href="/addListing"><button>Add</button></a>
+   <% for(let Listing of alldata){ %>
+    <li> <%= Listing.name %></li>
+    <li> <%= Listing.number %></li>
+    <li> <%= Listing.city%></li>
+
+    
+
+    <form action="/Listings/<%=Listing._id %>?_method=DELETE" method="POST" >
+        <button type="submit">Delete</button>
+    </form>
+    <a href="/Listings/<%=Listing._id %>/edit"><button>Update</button></a>
+
+   <%}%>
+  
+</ul>
+</body>
+</html>
+
+
+
+
