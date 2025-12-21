@@ -1,3 +1,267 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Marketplace Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header & Nav */
+.header {
+    border-bottom: 2px solid #000;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-box {
+    border: 1px solid #000;
+    padding: 10px 30px;
+}
+
+.search-bar input {
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.btn-outline {
+    padding: 8px 25px;
+    border: 1px solid #000;
+    background: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.main-nav {
+    border-top: 1px solid #000;
+    padding: 10px 20px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 350px;
+    border: 2px solid #000;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Drawing the X background from your wireframe */
+    background: linear-gradient(to top right, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%),
+                linear-gradient(to top left, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%);
+}
+
+.hero-content {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.btn-view {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+/* Categories */
+.categories, .popular-cars {
+    padding: 20px;
+    border-top: 2px solid #000;
+}
+
+.category-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.img-placeholder {
+    width: 150px;
+    height: 100px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    background: linear-gradient(to top right, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%),
+                linear-gradient(to top left, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%);
+}
+
+.category-item p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Popular Cars Card */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.car-card {
+    border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.car-img {
+    height: 120px;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top right, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%),
+                linear-gradient(to top left, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%);
+}
+
+.car-details {
+    padding: 10px;
+}
+
+.car-details p { margin-bottom: 5px; }
+.btn-details {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    border-top: 2px solid #000;
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="top-nav">
+            <div class="logo-box">LOGO</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for cars...">
+            </div>
+            <div class="auth-btns">
+                <button class="btn-outline">Login</button>
+                <button class="btn-outline">Sell</button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">New Car</a></li>
+                <li><a href="#">Used Car</a></li>
+                <li><a href="#">News & Reviews</a></li>
+                <li><a href="#">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Find your Right Car</h1>
+            <button class="btn-view">View Cars</button>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2>Categories</h2>
+        <div class="category-grid">
+            <div class="category-item">
+                <div class="img-placeholder">X</div>
+                <p>New Cars</p>
+            </div>
+            <div class="category-item">
+                <div class="img-placeholder">X</div>
+                <p>Used Cars</p>
+            </div>
+            <div class="category-item">
+                <div class="img-placeholder">X</div>
+                <p>Electric Cars</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-cars">
+        <h2>Popular Cars</h2>
+        <div class="car-grid">
+            <div class="car-card">
+                <div class="car-img">X</div>
+                <div class="car-details">
+                    <p class="model">car model</p>
+                    <p class="price">Price</p>
+                    <p class="specs">10,000km . petrol . 2020</p>
+                    <button class="btn-details">View Details</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-img">X</div>
+                <div class="car-details">
+                    <p class="model">car model</p>
+                    <p class="price">Price</p>
+                    <p class="specs">10,000km . petrol . 2020</p>
+                    <button class="btn-details">View Details</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-img">X</div>
+                <div class="car-details">
+                    <p class="model">car model</p>
+                    <p class="price">Price</p>
+                    <p class="specs">10,000km . petrol . 2020</p>
+                    <button class="btn-details">View Details</button>
+                </div>
+            </div>
+            <div class="car-card">
+                <div class="car-img">X</div>
+                <div class="car-details">
+                    <p class="model">car model</p>
+                    <p class="price">Price</p>
+                    <p class="specs">10,000km . petrol . 2020</p>
+                    <button class="btn-details">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h2>Footer Section</h2>
+    </footer>
+
+</body>
+</html> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
