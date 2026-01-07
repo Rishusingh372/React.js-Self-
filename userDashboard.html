@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Dashboard – Buyer & Seller</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    body { background: #f5f6fa; display: flex; }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      background: #ffffff;
+      height: 100vh;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+    }
+    .profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8e2de2, #4a00e0);
+      color: #fff;
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+    }
+    .profile span { font-size: 12px; color: green; }
+
+    .menu a {
+      display: block;
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .menu a.active, .menu a:hover { background: #ede7f6; color: #5e35b1; }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .hidden { display: none; }
+
+    .actions button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .primary { background: #7c4dff; color: #fff; }
+    .secondary { background: #e0e0e0; }
+
+    ul { margin-top: 10px; }
+    li { margin: 8px 0; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar { width: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <div class="avatar">D</div>
+      <h3>Demo User</h3>
+      <p>demo@gmail.com</p>
+      <span>USER (Buyer + Seller)</span>
+    </div>
+
+    <div class="menu">
+      <a class="active" onclick="showSection('dashboard')">Dashboard</a>
+      <a onclick="showSection('favorites')">Favorites</a>
+      <a onclick="showSection('compare')">Compare Cars</a>
+      <a onclick="showSection('testdrives')">Test Drives</a>
+      <a onclick="showSection('messages')">Messages</a>
+      <a onclick="showSection('listings')">My Listings</a>
+      <a onclick="showSection('sell')">Sell Your Car</a>
+      <a onclick="showSection('finance')">Loan & Insurance</a>
+      <a onclick="showSection('valuation')">Car Valuation</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="card">
+      <h2>Welcome, Demo 👋</h2>
+      <p>You can buy and sell cars from one account.</p>
+      <div class="actions" style="margin-top:15px;">
+        <button class="primary">Browse Cars</button>
+        <button class="secondary">View Favorites</button>
+      </div>
+    </div>
+
+    <!-- Favorites -->
+    <div id="favorites" class="card hidden">
+      <h2>Favorite Cars</h2>
+      <ul>
+        <li>Maruti Swift</li>
+        <li>Hyundai Creta</li>
+      </ul>
+    </div>
+
+    <!-- Compare -->
+    <div id="compare" class="card hidden">
+      <h2>Compare Cars</h2>
+      <p>Select up to 4 cars to compare specifications.</p>
+    </div>
+
+    <!-- Test Drives -->
+    <div id="testdrives" class="card hidden">
+      <h2>Test Drives</h2>
+      <p>No test drives booked yet.</p>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages" class="card hidden">
+      <h2>Messages</h2>
+      <p>Chat with sellers and buyers.</p>
+    </div>
+
+    <!-- Listings -->
+    <div id="listings" class="card hidden">
+      <h2>My Listings</h2>
+      <ul>
+        <li>Honda City – Pending</li>
+        <li>Tata Nexon – Approved</li>
+      </ul>
+    </div>
+
+    <!-- Sell Car -->
+    <div id="sell" class="card hidden">
+      <h2>Sell Your Car</h2>
+      <p>Upload your car details and images.</p>
+      <button class="primary" style="margin-top:10px;">Add New Car</button>
+    </div>
+
+    <!-- Finance -->
+    <div id="finance" class="card hidden">
+      <h2>Loan & Insurance</h2>
+      <p>Check EMI, loan eligibility, and insurance options.</p>
+    </div>
+
+    <!-- Valuation -->
+    <div id="valuation" class="card hidden">
+      <h2>Car Valuation</h2>
+      <p>Get estimated resale value of your car.</p>
+    </div>
+
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.card').forEach(c => c.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+
+      document.querySelectorAll('.menu a').forEach(a => a.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
